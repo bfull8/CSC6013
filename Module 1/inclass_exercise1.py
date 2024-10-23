@@ -38,6 +38,16 @@ class LinkedList:
             tmp.next = self.current.next.next
             self.current.next = tmp
 
+    def removeCurrentNext(self):
+        """Remove the Node that the Current Node points to"""
+
+        if self.current.next is None:
+            return None
+        else:
+            ans = self.current.next.data
+            self.current.next = self.current.next.next
+            return ans
+
     def nextCurrent(self):
         """Change the Current node to Node that the Current points to"""
 
@@ -51,15 +61,13 @@ class LinkedList:
 
         self.current = self.header
 
-    def removeCurrentNext(self):
-        """Remove the Node that the Current Node points to"""
+    def getCurrent(self):
+        """Return the data of the Current Node"""
 
-        if self.current.next is None:
+        if self.current is None:
             return None
         else:
-            ans = self.current.next.data
-            self.current.next = self.current.next.next
-            return ans
+            return self.current.data
 
     def printList(self, msg="====="):
         """Print the data of each data and what the Current Node is"""
@@ -76,14 +84,6 @@ class LinkedList:
         else:
             print("Empty Linked List")
         print("------------------------------------")
-
-    def getCurrent(self):
-        """Return the data of the Current Node"""
-
-        if self.current is None:
-            return None
-        else:
-            return self.current.data
 
 
 if __name__ == "__main__":
