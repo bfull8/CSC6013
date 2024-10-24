@@ -30,12 +30,21 @@ class LinkedList:
         else:
             self.Current = self.Header
 
-    def printList(self):
+    def printList(self, msg="====="):
+        """Print the data of each data and what the Current Node is"""
+
         p = self.Header
+        print("====", msg)
 
         while p is not None:
             print(p.data, end=" ")
             p = p.next
+
+        if self.Current is not None:
+            print(f"Current: {self.Current.data}")
+        else:
+            print("Empty Linked List")
+        print("-" * 75)
 
     def resetCurrent(self):
         self.Current = self.Header
@@ -47,6 +56,14 @@ class LinkedList:
             ans = self.Current.next.data
             self.Current.next = self.Current.next.next
         return ans
+
+    def getCurrent(self):
+        """Return the data of the Current Node"""
+
+        if self.Current is None:
+            return None
+        else:
+            return self.Current.data
 
 
 def main():
@@ -76,10 +93,12 @@ def main():
     # Search in LinkedList for value x
     # If value exists, remove it. If value does not exist, insert it
     while L.Current.data < x:
-        if L.Current.next.data == x:
-            L.removeCurrentNext()
-        elif L.Current.next.data > x:
+        if L.Current.next is None or L.Current.next.data > x:
             L.insertNextCurrent(x)
+            L.printList(f"Inserted {x} next to {L.getCurrent()}")
+        elif L.Current.next.data == x:
+            L.removeCurrentNext()
+            L.printList(f"Removed {x} from LinkedList")
 
         L.nextCurrent()
 

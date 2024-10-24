@@ -35,7 +35,7 @@ class LinkedList:
             self.current = self.header
         else:
             tmp = Node(d)
-            tmp.next = self.current.next.next
+            tmp.next = self.current.next
             self.current.next = tmp
 
     def removeCurrentNext(self):
@@ -95,17 +95,18 @@ if __name__ == "__main__":
     mylist.insertBeginning(11)
     mylist.insertBeginning(88)
     mylist.insertBeginning(76)
-    mylist.printList("The Current Status of the List")
+    mylist.printList("Adding 6 Integers to List")
 
     mylist.resetCurrent()
     mylist.printList("Resetting the Current")
 
     mylist.nextCurrent()
     mylist.nextCurrent()
-    mylist.printList(f"Setting current to: {mylist.getCurrent()}")
+    mylist.printList(f"Setting current to the third element in the list")
+    print(f"The current is: {mylist.getCurrent()}")
 
     mylist.removeCurrentNext()
-    mylist.printList(f"Removing next the Current")
+    mylist.printList(f"Removing next the Current element")
 
     mylist.insertCurrentNext(23)
-    mylist.printList(f"Inserting next the Current")
+    mylist.printList(f"Inserting 23 next the Current element")
