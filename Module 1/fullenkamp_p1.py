@@ -101,7 +101,7 @@ class LinkedList:
 def main():
 
     # Create an array of the integers
-    with open("Data.txt", "r") as file:
+    with open("data.txt", "r") as file:
         a = []
         for line in file:
             a.append(int(line))
@@ -141,7 +141,7 @@ def main():
                 L.removeBeginning()
                 L.printList(f"Removed {x} from list")
                 break
-            elif L.Header.Data > x:  # Insert at beginning if Header is greater
+            elif L.Header.Data > x:  # Insert at beginning if Header value is greater
                 L.insertBeginning(x)
                 L.printList(f"Inserted {x} at the beginning of list")
                 break
