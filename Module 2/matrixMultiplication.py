@@ -7,16 +7,16 @@ def multiplyMatrices(A,B,n):
 
     Output: 2D array representing product of AB
     """
-    C = []
 
-    row = []
-    i,j = 0,0
-    while i < range(n):
-        product = 0
-        while j < range(n):
-            product += A[i][j] * B[j][i]
-        row.append(product)
-    C.append(row)
+    C = []
+    for i in range(n):
+        row = []
+        for j in range(n):
+            product = 0
+            for k in range(n):
+                product += A[i][k] * B[k][j]
+            row.append(product)
+        C.append(row)
 
     return C
 
