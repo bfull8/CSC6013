@@ -1,5 +1,5 @@
 def smallestGap(A):
-    """ Returns the smallest gaps between all pairs of eleemnts in an Array
+    """ Returns the smallest gap between all pairs of elements in an Array
     Inputs:
         A - array of Real numbers
 
