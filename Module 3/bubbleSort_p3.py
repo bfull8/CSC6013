@@ -1,7 +1,13 @@
-def bubbleSort(A):
-    """ Sorts an array, moving the largest element to the end of the list in each iteration"""
+# Ben Fullenkamp
+# CSC6013 - Project 3
 
-    # Compare each element to its neighbor on the right and swap if the neighbor is larger
+def bubbleSort(A):
+    """ Sorts an array by comparing adjacent elements and swapping if they are out of order
+        Input - Array of integers
+        Output - Sorted Array
+    """
+
+    # Compare each element to its neighbor on the right and swap if the neighbor is smaller
     for i in range(len(A) - 1):
         compare = 0         # Counter for number of comparisons
         swap = 0            # Counter for number of swaps
@@ -10,9 +16,11 @@ def bubbleSort(A):
             if A[j] > A[j+1]:
                 A[j], A[j+1] = A[j+1], A[j]
                 swap += 1
-        print(f"Number of times two elements were compared: {compare}, Number of element swaps: {swap}, Current Status of Array: {A}")
 
-        # If there were no swaps in the iteration, the array is already fully
+        # Print the number of comparisons, swaps, and current status of the array
+        print(f"Comparisons = {compare} | Swaps = {swap} | Array = {A}")
+
+        # If there were no swaps in the iteration, the array is already sorted
         if swap == 0:
             return
 
