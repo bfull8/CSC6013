@@ -1,6 +1,16 @@
 def binaryDigits(n):
+    """
+    Calculates the number of digits in the binary expansion/representation of a positive Integer n
+    Input:
+        n: Postive Integer
+    Output:
+        Integer representing the number of binary digits in binary representation of n
+    """
+
+    # Base Case
     if n == 1:
         return 1
+    # Recursive case
     else:
         return 1 + binaryDigits(n//2)
 
