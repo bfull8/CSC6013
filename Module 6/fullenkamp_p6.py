@@ -1,3 +1,6 @@
+# Ben Fullenkamp
+# CSC6013 - Project 6
+
 import random
 
 def QuickSelect(A,k,left,right):
