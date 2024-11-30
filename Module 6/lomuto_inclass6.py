@@ -39,8 +39,8 @@ def lomuto(A,left,right):
         print()
 
     print(f"Step 12:")
-    print(f"Swap A[i]: {A[i]} with Pivot: {p}")
-    A[i], p = p, A[i]
+    print(f"Swap A[i]: {A[i]} with Pivot: {p} | Total swaps = {total_swaps + 1}")
+    A[i], A[right] = A[right], A[i]
     print(f"Elements lesser than pivot: {A[0:i]}")
     print(f"Elements greater than pivot: {A[i:j+1]}")
     print(f"Pivot: {A[i]} at index {i}")
