@@ -44,11 +44,14 @@ def main():
 
     # Ask user for k (k-th smallest element to search for)
     while True:
-        k = int(input("Enter k to find the k-th smallest element: "))
-        if k >= 1 and k <= len(A):
-            break
-        else:
-            print(f"Error: Enter a value between 1 and {len(A)}.")
+        try:
+            k = int(input("Enter k to find the k-th smallest element: "))
+            if k >= 1 and k <= len(A):
+                break
+            else:
+                print(f"Error: Enter a value between 1 and {len(A)}.")
+        except:
+            print("Invalid Input. Please enter a number.")
 
     # Call quickselect and print the k-th smallest element
     print(f"The {k}-th smallest element in the array is: {QuickSelect(A,k,0,len(A)-1)}")
