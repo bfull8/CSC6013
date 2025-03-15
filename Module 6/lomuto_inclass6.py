@@ -46,7 +46,15 @@ def lomuto(A,left,right):
     print(f"Pivot: {A[i]} at index {i}")
     return i
 
-A = [100, 33, 22, 213, 65, 29, 153, 199, 47, 181, 85]
+#A = [100, 33, 22, 213, 65, 29, 153, 199, 47, 181, 85]
+
+
+#A = [127, 48, 62, 51, 198, 17, 52, 209]
+#A = [127, 48, 62, 51, 198, 17, 52]
+#A = [48,51,17]
+#A = [198,62,127]
+A = [51,48]
+
 pvt = lomuto(A,0,len(A)-1)
 print()
 print(f"Final Array: Lomuto with pivot at index {pvt}: {A[pvt]}")

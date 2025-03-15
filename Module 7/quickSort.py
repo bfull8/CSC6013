@@ -20,5 +20,7 @@ def quickSort(A, left, right):
         quickSort(A,mid+1,right)   # All elements greater than pivot element
 
 A = [22,11,88,66,55,77,33,44]
+A = [3,44,38,5,47,15,36,26,27,2,46,4,19,50,48]
 quickSort(A,0,len(A)-1)
 print(A)
+print(count)
